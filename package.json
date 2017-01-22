@@ -2,6 +2,9 @@
   "name": "hello-world",
   "description": "Prueba de hello world mediante node-static",
   "version": "0.0.0",
+  "dependencies": {
+    "node-static": "0.7.9"
+  },
   "author": "Kevin Falcón <kevin.af09@gmail.com>",
   "private": true,
   "license": "MIT"
