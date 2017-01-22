@@ -5,6 +5,10 @@
   "dependencies": {
     "node-static": "0.7.9"
   },
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
   "author": "Kevin Falcón <kevin.af09@gmail.com>",
   "private": true,
   "license": "MIT"
