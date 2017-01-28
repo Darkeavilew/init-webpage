@@ -1,3 +1,12 @@
+/*--
+    Archivo Principal
+        Este archivo permite la ejecucion 
+        de la pagina por medio de un 
+        protocolo 'http'.
+
+        Directorio de archivos a mostrar: '/web/'
+--*/
+
 'use strict';
 
 const fs = require('fs');
@@ -19,32 +28,38 @@ http.createServer(function (request, response) {
         }
     }
 
+    // Tipos y extension de archivos
     let extname = path.extname(filePath);
     let contentType = 'text/html';
     switch (extname) {
-        case '.js':
+        case '.js': // Script (Javascript)
             contentType = 'text/javascript';
             break;
-        case '.css':
+        case '.css': //Estilo (CSS)
             contentType = 'text/css';
             break;
-        case '.json':
+        case '.json': // Datos modificables
             contentType = 'application/json';
             break;
-        case '.png':
+        case '.png': // Extension de imagen
             contentType = 'image/png';
             break;      
-        case '.jpg':
+        case '.jpg': // Extension de imagen
             contentType = 'image/jpg';
             break;
-        case '.wav':
+        case '.wav': // Video/Audio
             contentType = 'audio/wav';
             break;
     }
+    
+    // Errores
+    // ----------
+    // El siguiente codigo envia el codigo de error
+    // a la direccion por la cual se intenta acceder.
 
     fs.readFile(filePath, function(error, content) {
         if (error) {
-            if(error.code == 'ENOENT'){
+            if(error.code == 'ENOENT'){// Archivo no encontrado
                 fs.readFile('./web/404.html', function(error, content) {
                     response.writeHead(200, { 'Content-Type': contentType });
                     response.end(content, 'utf-8');
