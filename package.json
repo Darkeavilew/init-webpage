@@ -1,10 +1,7 @@
 {
-  "name": "hello-world",
-  "description": "Prueba de hello world mediante node-static",
-  "version": "0.0.0",
-  "dependencies": {
-    "node-static": "0.7.9"
-  },
+  "name": "init-webpage",
+  "description": "Has correr tu propia pagina web con este pequeño script en node.js",
+  "version": "0.0.1",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
