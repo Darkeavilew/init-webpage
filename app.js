@@ -4,11 +4,19 @@ const fs = require('fs');
 const http = require('http');
 const path = require('path');
 
+let config = {
+    maintenance: false,
+};
+
 http.createServer(function (request, response) {
     
     let filePath = '.' + request.url;
     if (filePath == './') {
-        filePath = './web/index.html';
+        if (config.maintenance === true) {
+            filePath = './web/maintenance.html';
+        } else {
+            filePath = './web/index.html';
+        }
     }
 
     let extname = path.extname(filePath);
