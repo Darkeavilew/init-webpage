@@ -6,6 +6,9 @@
   "scripts": {
     "start": "node app.js"
   },
+  "engines": {
+    "node": ">=6.0.0"
+  },
   "author": "Kevin Falcón <kevin.af09@gmail.com>",
   "private": true,
   "license": "MIT"
