@@ -81,5 +81,6 @@ http.createServer(function (request, response) {
 
 console.log(
     '\n',
-    '-------------- Init WebPage --------------'
+    '-------------- Init WebPage --------------',
+    config.maintenance === true ? '\n ------------- En mantenimiento -----------' : '\n'
 );
